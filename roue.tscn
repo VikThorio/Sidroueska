@@ -44,6 +44,7 @@ script = ExtResource("1_34hw4")
 save_data = ExtResource("2_filp8")
 
 [node name="Parameters" type="Node2D" parent="."]
+visible = false
 position = Vector2(-96, 45)
 scale = Vector2(0.763675, 0.763675)
 
