@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MyData" load_steps=2 format=3 uid="uid://b0xvsss84ybvm"]
+
+[ext_resource type="Script" uid="uid://bvylc758xvggq" path="res://save_data.gd" id="1_v31qy"]
+
+[resource]
+script = ExtResource("1_v31qy")
+nb_quartiers = 3
+colors = Array[Vector4]([])
+labels = Array[String]([])
+label_colors = Array[Color]([])
+labels_scale = 1.0
+labels_shift = 150.0

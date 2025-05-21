@@ -1,0 +1,296 @@
+[gd_scene load_steps=19 format=3 uid="uid://x2uo82d3b28c"]
+
+[ext_resource type="Texture2D" uid="uid://d3culjf5lr7a" path="res://sidous.png" id="1_5o6mc"]
+[ext_resource type="Script" uid="uid://cefr1yrm6o5v6" path="res://sidouska.gd" id="1_u56br"]
+[ext_resource type="SkeletonModification2DCCDIK" uid="uid://bw144kkttsfqq" path="res://Modifications/modif_pied_droit.tres" id="2_tqyfc"]
+[ext_resource type="SkeletonModification2DCCDIK" uid="uid://clsdkuxuapnr2" path="res://Modifications/modif_pied_gauche.tres" id="3_lpvgm"]
+[ext_resource type="SkeletonModification2DCCDIK" uid="uid://lveu2sgic1og" path="res://Modifications/modif_hand_right.tres" id="4_5jxov"]
+[ext_resource type="SkeletonModification2DCCDIK" uid="uid://bclm0wfnbxscl" path="res://Modifications/modif_hand_left.tres" id="5_hyjrf"]
+[ext_resource type="SkeletonModification2DCCDIK" uid="uid://dc8g0boqs7w3a" path="res://Modifications/modif_head.tres" id="6_f3err"]
+[ext_resource type="Texture2D" uid="uid://birn7yin7rder" path="res://sidous_mouth_1.png" id="8_mc88t"]
+[ext_resource type="Texture2D" uid="uid://ck0bl1l4kjxko" path="res://sidous_eyes_1.png" id="8_p3wal"]
+[ext_resource type="Texture2D" uid="uid://bb5a40uji128" path="res://sidous_mouth_2.png" id="9_qtxip"]
+[ext_resource type="Texture2D" uid="uid://5bejd0t8deu6" path="res://sidous_eyes_2.png" id="9_xagkp"]
+[ext_resource type="Texture2D" uid="uid://c2f0sqacout1e" path="res://sidous_eyes_3.png" id="10_1imrb"]
+[ext_resource type="Texture2D" uid="uid://c4nshfvqxqcyv" path="res://sidous_mouth_3.png" id="10_enp3d"]
+[ext_resource type="Texture2D" uid="uid://be1ow8p8ssptp" path="res://sidous_mouth_4.png" id="11_474wn"]
+[ext_resource type="Texture2D" uid="uid://dymn4j5o3a0m6" path="res://sidous_hair.png" id="11_cxumk"]
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_txswi"]
+enabled = true
+modification_count = 6
+modifications/0 = ExtResource("2_tqyfc")
+modifications/1 = ExtResource("3_lpvgm")
+modifications/2 = ExtResource("4_5jxov")
+modifications/3 = ExtResource("5_hyjrf")
+modifications/4 = ExtResource("6_f3err")
+modifications/5 = ExtResource("4_5jxov")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_odwy1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_mc88t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qtxip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_enp3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_474wn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mc88t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_p3wal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xagkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1imrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xagkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p3wal")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_p3wal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xagkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1imrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xagkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p3wal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xagkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1imrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xagkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p3wal")
+}],
+"loop": false,
+"name": &"double",
+"speed": 20.0
+}]
+
+[node name="Sidouska" type="Node2D"]
+script = ExtResource("1_u56br")
+
+[node name="Polygons" type="Node2D" parent="."]
+position = Vector2(-421, -531)
+
+[node name="Tete" type="Polygon2D" parent="Polygons"]
+position = Vector2(0, 73)
+texture = ExtResource("1_5o6mc")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(378.993, 277.942, 358.906, 276.826, 307.572, 293.566, 286.369, 284.638, 285.253, 257.855, 304.224, 258.971, 304.224, 250.043, 274.093, 234.42, 268.513, 208.753, 278.557, 179.738, 299.76, 152.955, 294.18, 115.012, 310.841, 83.4343, 338.433, 76.1459, 355.613, 58.4454, 380.602, 55.3218, 413.921, 46.9921, 453.486, 54.2806, 468.584, 82.9137, 495.135, 101.655, 503.464, 120.397, 524.288, 145.907, 535.221, 167.772, 548.757, 200.049, 528.974, 217.75, 512.346, 254.195, 494.125, 275.019, 487.358, 294.281, 455.601, 284.91, 444.147, 285.431, 428.529, 297.925, 406.143, 298.967, 388.964, 290.116)
+bones = ["Hanches", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite/PiedDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche/PiedGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit/MainDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche/MainGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/Cou", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+
+[node name="MainDroite" type="Polygon2D" parent="Polygons"]
+position = Vector2(-132, -71)
+texture = ExtResource("1_5o6mc")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(658.249, 691.399, 726.849, 737.132, 742.786, 728.124, 743.479, 716.345, 733.085, 709.415, 760.802, 708.03, 765.652, 686.549, 754.566, 674.076, 719.227, 671.305, 685.273, 653.982, 659.635, 659.525)
+bones = ["Hanches", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite/PiedDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche/PiedGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit/MainDroite", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Hanches/Ventre/BrasGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche/MainGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/Cou", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="MainGauche" type="Polygon2D" parent="Polygons"]
+position = Vector2(149, -76)
+texture = ExtResource("1_5o6mc")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(176.467, 704.388, 116.623, 755.412, 98.3553, 746.593, 98.9853, 730.845, 80.0873, 727.695, 71.8983, 708.168, 81.3472, 692.419, 117.253, 688.01, 148.12, 677.301, 172.057, 676.041)
+bones = ["Hanches", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite/PiedDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche/PiedGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit/MainDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche/MainGauche", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Hanches/Ventre/Cou", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="BrasDroit" type="Polygon2D" parent="Polygons"]
+position = Vector2(-108, 6)
+texture = ExtResource("1_5o6mc")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(631.506, 612.377, 613.213, 561.309, 601.017, 527.009, 588.822, 493.472, 574.34, 454.599, 567.312, 434.834, 550.304, 407.747, 549.044, 369.952, 561.012, 344.124, 578.021, 341.605, 606.367, 352.943, 617.706, 371.841, 624.635, 395.779, 622.116, 409.007, 627.785, 432.315, 636.604, 466.331, 644.793, 491.528, 661.801, 533.733, 671.88, 569.009, 679.811, 592.544, 679.238, 614.305, 671.221, 621.749, 652.896, 623.467, 633.992, 542.52, 624.294, 513.721, 613.421, 481.984)
+uv = PackedVector2Array(631.506, 612.377, 613.213, 561.309, 601.017, 527.009, 588.822, 493.472, 574.34, 454.599, 567.312, 434.834, 550.304, 407.747, 549.044, 369.952, 561.012, 344.124, 578.021, 341.605, 606.367, 352.943, 617.706, 371.841, 624.635, 395.779, 622.116, 409.007, 627.785, 432.315, 636.604, 466.331, 644.793, 491.528, 661.801, 533.733, 671.88, 569.009, 679.811, 592.544, 679.238, 614.305, 671.221, 621.749, 652.896, 623.467, 633.992, 542.52, 624.294, 513.721, 613.421, 481.984)
+polygons = [PackedInt32Array(25, 4, 3), PackedInt32Array(25, 2, 3), PackedInt32Array(25, 24, 2), PackedInt32Array(25, 15, 16), PackedInt32Array(25, 24, 16), PackedInt32Array(25, 14, 15), PackedInt32Array(2, 23, 24), PackedInt32Array(24, 16, 23), PackedInt32Array(23, 1, 2), PackedInt32Array(23, 17, 16), PackedInt32Array(23, 0, 1), PackedInt32Array(23, 18, 17), PackedInt32Array(23, 0, 22, 21, 20, 19, 18), PackedInt32Array(25, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)]
+bones = ["Hanches", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite/PiedDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche/PiedGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit", PackedFloat32Array(0, 0, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0, 0, 0, 0, 0, 0, 0, 0.5, 1), "Hanches/Ventre/BrasDroit/CoudeDroit", PackedFloat32Array(1, 1, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 1, 1, 1, 1, 1, 1, 1, 0.5, 0), "Hanches/Ventre/BrasDroit/CoudeDroit/MainDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche/MainGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/Cou", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 3
+
+[node name="BrasGauche" type="Polygon2D" parent="Polygons"]
+position = Vector2(117, 14)
+texture = ExtResource("1_5o6mc")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(178.892, 625.441, 165.389, 619.303, 156.796, 603.345, 169.071, 550.56, 175.209, 516.188, 187.485, 484.272, 196.078, 442.535, 201.244, 415.836, 197.464, 395.048, 208.173, 371.111, 225.438, 344.074, 245.741, 337.307, 266.045, 339.389, 275.936, 353.966, 280.101, 371.146, 276.977, 396.135, 268.127, 426.85, 255.112, 439.865, 247.758, 460.941, 241.522, 498.359, 235.285, 524.69, 226.97, 562.801, 213.805, 609.92, 204.104, 624.471, 208.603, 507.493, 201.171, 539.957, 216.034, 475.028)
+uv = PackedVector2Array(208.603, 507.493, 201.171, 539.957, 214.47, 473.855)
+polygons = [PackedInt32Array(3, 25, 4), PackedInt32Array(25, 21, 20), PackedInt32Array(25, 24, 4), PackedInt32Array(24, 20, 25), PackedInt32Array(5, 24, 4), PackedInt32Array(24, 19, 20), PackedInt32Array(24, 26, 5), PackedInt32Array(26, 19, 24), PackedInt32Array(26, 6, 5), PackedInt32Array(26, 18, 19), PackedInt32Array(26, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18), PackedInt32Array(2, 3, 25, 21, 22, 23, 0, 1)]
+bones = ["Hanches", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite/PiedDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche/PiedGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit/MainDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0, 0, 0, 0, 0.5, 0, 1), "Hanches/Ventre/BrasGauche/CoudeGauche", PackedFloat32Array(1, 1, 1, 1, 1, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 1, 1, 1, 1, 0.5, 1, 0), "Hanches/Ventre/BrasGauche/CoudeGauche/MainGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/Cou", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 3
+
+[node name="PiedGauche" type="Polygon2D" parent="Polygons"]
+position = Vector2(-6, -168)
+texture = ExtResource("1_5o6mc")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(241.563, 1403.92, 171.47, 1397.46, 106.911, 1370.71, 104.144, 1324.6, 138.268, 1309.84, 157.636, 1308.92, 188.071, 1274.8, 220.351, 1263.73, 261.854, 1255.43, 311.657, 1260.96, 352.237, 1272.03, 377.139, 1278.49, 377.139, 1300.62, 379.905, 1328.29, 377.139, 1354.11, 356.848, 1379.94, 299.667, 1402.99)
+bones = ["Hanches", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite/PiedDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche/PiedGauche", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Hanches/Ventre", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit/MainDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche/MainGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/Cou", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="PiedDroit" type="Polygon2D" parent="Polygons"]
+position = Vector2(-25, -184)
+texture = ExtResource("1_5o6mc")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(520.837, 1375.98, 556.051, 1397.78, 627.318, 1414.55, 702.777, 1417.07, 771.529, 1407, 796.682, 1381.85, 799.198, 1349.15, 788.298, 1320.64, 757.276, 1313.94, 730.446, 1310.58, 712, 1285.43, 690.201, 1278.72, 672.594, 1264.47, 639.056, 1272.85, 566.112, 1277.88, 527.544, 1280.4, 514.968, 1301.36, 518.321, 1324, 504.068, 1347.47)
+bones = ["Hanches", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite/PiedDroit", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Hanches/JambeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche/PiedGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit/MainDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche/MainGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/Cou", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Torse" type="Polygon2D" parent="Polygons"]
+texture = ExtResource("1_5o6mc")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(337.053, 524.759, 346.962, 503.417, 355.346, 488.935, 356.108, 475.215, 348.486, 460.733, 347.724, 438.629, 350.011, 418.811, 351.535, 408.14, 338.577, 379.938, 333.242, 355.547, 365.255, 332.681, 402.604, 325.821, 439.19, 325.821, 475.776, 330.394, 494.832, 347.925, 507.789, 368.505, 503.978, 392.133, 495.594, 418.049, 497.118, 427.195, 497.88, 444.726, 489.709, 456.928, 484.977, 470.696, 486.698, 486.185, 494.012, 499.953, 507.027, 527.046, 466.63, 533.905, 424.708, 536.954, 385.073, 540.003, 350.011, 532.381, 422.16, 512.43, 421.73, 493.93, 421.73, 478.01, 421.299, 463.812)
+uv = PackedVector2Array(422.16, 512.43, 421.73, 493.93, 421.73, 478.01, 421.299, 463.812)
+polygons = [PackedInt32Array(29, 1, 30), PackedInt32Array(30, 2, 1), PackedInt32Array(30, 31, 2), PackedInt32Array(31, 3, 2), PackedInt32Array(31, 32, 3), PackedInt32Array(32, 4, 3), PackedInt32Array(29, 23, 30), PackedInt32Array(30, 22, 31), PackedInt32Array(31, 21, 32), PackedInt32Array(32, 20, 21), PackedInt32Array(31, 21, 22), PackedInt32Array(30, 22, 23), PackedInt32Array(23, 24, 25, 26, 27, 28, 0, 1, 29), PackedInt32Array(32, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)]
+bones = ["Hanches", PackedFloat32Array(1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0, 0), "Hanches/JambeDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite/PiedDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche/PiedGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre", PackedFloat32Array(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 1, 1), "Hanches/Ventre/BrasDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit/MainDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche/MainGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/Cou", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 4
+
+[node name="Jambes" type="Polygon2D" parent="Polygons"]
+position = Vector2(-7, -79)
+texture = ExtResource("1_5o6mc")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(210.893, 1199.74, 271.792, 1207.17, 314.867, 1220.54, 356.456, 1248.76, 389.134, 1254.7, 389.134, 1199.74, 398.046, 1123.99, 399.531, 1064.57, 408.443, 991.793, 410.193, 941.981, 409.271, 877.421, 407.566, 800.863, 424.776, 727.72, 445.507, 801.254, 451.695, 884.799, 450.773, 943.825, 457.857, 991.711, 464.459, 1066.83, 467.226, 1147.07, 479.739, 1242.82, 491.622, 1274.01, 510.932, 1281.43, 559.948, 1245.79, 592.625, 1222.02, 643.127, 1207.17, 693.629, 1192.31, 671.348, 1147.75, 652.039, 1097.25, 643.127, 1054.18, 644.612, 1002.19, 623.818, 932.379, 600.052, 868.51, 566.375, 798.683, 544.095, 681.341, 532.213, 593.706, 505.476, 559.543, 456.46, 569.941, 401.503, 574.397, 364.369, 574.397, 337.633, 575.882, 313.867, 633.81, 304.955, 694.709, 300.499, 758.579, 290.102, 809.081, 272.747, 883.743, 261.31, 970.339, 244.972, 1042.23, 226.999, 1087.98, 209.026, 1145.16, 338.447, 912.092, 333.762, 948.014, 325.952, 976.126, 530.31, 896.638, 539.456, 936.274, 545.554, 972.86, 383.31, 667.944, 368.218, 701.481, 366.541, 733.342, 471.346, 660.398, 491.468, 688.905, 499.014, 722.442, 423.644, 693.751, 386.943, 634.386, 465.679, 626.642)
+uv = PackedVector2Array(338.447, 912.092, 333.762, 948.014, 325.952, 976.126, 530.31, 896.638, 539.456, 936.274, 545.554, 972.86, 383.31, 667.944, 368.218, 701.481, 366.541, 733.342, 478.892, 662.075, 496.499, 690.581, 500.691, 729.15, 471.346, 660.398, 491.468, 688.905, 499.014, 722.442, 423.555, 706.512, 386.943, 634.386, 465.679, 626.642)
+polygons = [PackedInt32Array(46, 51, 7, 6, 5, 4, 3, 2, 1, 0, 48, 47), PackedInt32Array(46, 45, 51), PackedInt32Array(51, 8, 7), PackedInt32Array(50, 45, 51), PackedInt32Array(8, 50, 51), PackedInt32Array(50, 9, 8), PackedInt32Array(49, 50, 9), PackedInt32Array(49, 10, 9), PackedInt32Array(50, 44, 49), PackedInt32Array(45, 44, 50), PackedInt32Array(49, 43, 44), PackedInt32Array(49, 10, 11), PackedInt32Array(13, 14, 52), PackedInt32Array(52, 32, 31), PackedInt32Array(15, 52, 14), PackedInt32Array(52, 30, 31), PackedInt32Array(15, 53, 52), PackedInt32Array(53, 30, 52), PackedInt32Array(15, 54, 53), PackedInt32Array(54, 30, 53), PackedInt32Array(16, 54, 15), PackedInt32Array(54, 29, 30), PackedInt32Array(16, 54, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17), PackedInt32Array(57, 42, 41), PackedInt32Array(57, 56, 41), PackedInt32Array(57, 61, 56), PackedInt32Array(61, 55, 56), PackedInt32Array(61, 55, 58), PackedInt32Array(61, 59, 58), PackedInt32Array(60, 61, 59), PackedInt32Array(57, 12, 61), PackedInt32Array(12, 60, 61), PackedInt32Array(42, 43, 49, 11, 12, 57), PackedInt32Array(40, 56, 55), PackedInt32Array(41, 40, 56), PackedInt32Array(40, 62, 55), PackedInt32Array(62, 63, 58, 55), PackedInt32Array(58, 34, 63), PackedInt32Array(59, 34, 58), PackedInt32Array(59, 33, 34), PackedInt32Array(60, 33, 59), PackedInt32Array(60, 32, 33), PackedInt32Array(13, 12, 60, 32, 52), PackedInt32Array(40, 39, 38, 37, 36, 35, 34, 63, 62)]
+bones = ["Hanches", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0.5, 0, 0, 0, 1, 1), "Hanches/JambeDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0.5, 0, 0, 0, 0, 0.5, 1, 1, 0.5, 0, 0), "Hanches/JambeDroite/GenouDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite/PiedDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 0, 0.5, 1, 1, 0, 0, 0, 0.5, 0, 0), "Hanches/JambeGauche/GenouGauche", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0.5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche/PiedGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit/MainDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche/MainGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/Cou", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 15
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+modification_stack = SubResource("SkeletonModificationStack2D_txswi")
+
+[node name="Hanches" type="Bone2D" parent="Skeleton2D"]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="JambeDroite" type="Bone2D" parent="Skeleton2D/Hanches"]
+position = Vector2(58, 57)
+rest = Transform2D(1, 0, 0, 1, 58, 57)
+
+[node name="GenouDroite" type="Bone2D" parent="Skeleton2D/Hanches/JambeDroite"]
+position = Vector2(49, 269)
+rest = Transform2D(1, 0, 0, 1, 49, 269)
+
+[node name="PiedDroit" type="Bone2D" parent="Skeleton2D/Hanches/JambeDroite/GenouDroite"]
+position = Vector2(40, 255)
+rest = Transform2D(1, 0, 0, 1, 40, 255)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+
+[node name="JambeGauche" type="Bone2D" parent="Skeleton2D/Hanches"]
+position = Vector2(-52, 57)
+rest = Transform2D(1, 0, 0, 1, -52, 57)
+
+[node name="GenouGauche" type="Bone2D" parent="Skeleton2D/Hanches/JambeGauche"]
+position = Vector2(-40, 271)
+rest = Transform2D(1, 0, 0, 1, -40, 271)
+
+[node name="PiedGauche" type="Bone2D" parent="Skeleton2D/Hanches/JambeGauche/GenouGauche"]
+position = Vector2(-41, 249)
+rest = Transform2D(1, 0, 0, 1, -41, 249)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+
+[node name="Ventre" type="Bone2D" parent="Skeleton2D/Hanches"]
+position = Vector2(0, -43)
+rest = Transform2D(1, 0, 0, 1, 0, -43)
+
+[node name="BrasDroit" type="Bone2D" parent="Skeleton2D/Hanches/Ventre"]
+position = Vector2(48, -105)
+rest = Transform2D(1, 0, 0, 1, 48, -105)
+
+[node name="CoudeDroit" type="Bone2D" parent="Skeleton2D/Hanches/Ventre/BrasDroit"]
+position = Vector2(45, 130)
+rest = Transform2D(1, 0, 0, 1, 45, 130)
+
+[node name="MainDroite" type="Bone2D" parent="Skeleton2D/Hanches/Ventre/BrasDroit/CoudeDroit"]
+position = Vector2(36, 96)
+rest = Transform2D(1, 0, 0, 1, 36, 96)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+
+[node name="BrasGauche" type="Bone2D" parent="Skeleton2D/Hanches/Ventre"]
+position = Vector2(-56, -101)
+rest = Transform2D(1, 0, 0, 1, -56, -101)
+
+[node name="CoudeGauche" type="Bone2D" parent="Skeleton2D/Hanches/Ventre/BrasGauche"]
+position = Vector2(-36, 128)
+rest = Transform2D(1, 0, 0, 1, -36, 128)
+
+[node name="MainGauche" type="Bone2D" parent="Skeleton2D/Hanches/Ventre/BrasGauche/CoudeGauche"]
+position = Vector2(-21, 104)
+rest = Transform2D(1, 0, 0, 1, -21, 104)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+
+[node name="Cou" type="Bone2D" parent="Skeleton2D/Hanches/Ventre"]
+position = Vector2(-7, -135)
+rest = Transform2D(1, 0, 0, 1, -7, -135)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+
+[node name="Tête" type="Node2D" parent="Skeleton2D/Hanches/Ventre/Cou"]
+
+[node name="Bouche" type="AnimatedSprite2D" parent="Skeleton2D/Hanches/Ventre/Cou/Tête"]
+position = Vector2(-8, -75)
+sprite_frames = SubResource("SpriteFrames_odwy1")
+frame_progress = 0.8062
+
+[node name="Yeux" type="AnimatedSprite2D" parent="Skeleton2D/Hanches/Ventre/Cou/Tête"]
+position = Vector2(-7, -73)
+sprite_frames = SubResource("SpriteFrames_mc88t")
+animation = &"double"
+
+[node name="SidousHair" type="Sprite2D" parent="Skeleton2D/Hanches/Ventre/Cou/Tête"]
+position = Vector2(-10, -101)
+texture = ExtResource("11_cxumk")
+
+[node name="TimerYeux" type="Timer" parent="Skeleton2D/Hanches/Ventre/Cou/Tête"]
+
+[node name="IKTargets" type="Node2D" parent="."]
+
+[node name="FootLeftTarget" type="Node2D" parent="IKTargets"]
+position = Vector2(-184, 564)
+
+[node name="FootRightTarget" type="Node2D" parent="IKTargets"]
+position = Vector2(229, 570)
+
+[node name="HandRightTarget" type="Node2D" parent="IKTargets"]
+position = Vector2(212, 137)
+
+[node name="HandLeftTarget" type="Node2D" parent="IKTargets"]
+position = Vector2(-180, 161)
+
+[node name="HeadTarget" type="Node2D" parent="IKTargets"]
+position = Vector2(-2, -198)
+
+[connection signal="timeout" from="Skeleton2D/Hanches/Ventre/Cou/Tête/TimerYeux" to="." method="_on_timer_yeux_timeout"]
