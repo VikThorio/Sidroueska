@@ -14,6 +14,7 @@ config/name="sidroueska"
 run/main_scene="uid://dngd8c6tfkdme"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://bve8ghhmx31yj"
+config/windows_native_icon="res://sidou.ico"
 
 [display]
 
