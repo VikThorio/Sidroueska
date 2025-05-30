@@ -578,6 +578,11 @@ pied_droit = NodePath("PiedDroit")
 pied_gauche = NodePath("PiedGauche")
 tete = NodePath("Tete")
 
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Sidouska"]
+libraries = {
+&"": SubResource("AnimationLibrary_d5x1h")
+}
+
 [node name="MainDroite" type="Node2D" parent="Sidouska"]
 position = Vector2(167, 187)
 
@@ -592,11 +597,6 @@ position = Vector2(-127, 581)
 
 [node name="Tete" type="Node2D" parent="Sidouska"]
 position = Vector2(6, -434)
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Sidouska"]
-libraries = {
-&"": SubResource("AnimationLibrary_d5x1h")
-}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(362, -36)
