@@ -1,3 +1,4 @@
+@tool
 extends Node2D
 
 @export var save_data: Resource
@@ -23,6 +24,9 @@ func _input(event):
             $Sidouska/AnimationPlayer2.queue("reset_position")
     if event.is_action_pressed("hide_background"):
         $ColorRect.visible = !$ColorRect.visible
+    if event.is_action_pressed("faire_coucou"):
+        if !$Roue.params_visible and !$Sidouska/AnimationPlayer2.is_playing():
+            $Sidouska/AnimationPlayer2.play("coucou")
 
 func update_targets():
     $Sidouska.update_targets()

@@ -12,3 +12,4 @@ labels_scale = 1.0
 labels_shift = 150.0
 path_sidou = ""
 ventre_over_jeans = false
+path_dir = ""

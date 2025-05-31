@@ -1,7 +1,7 @@
 [gd_resource type="SkeletonModification2DCCDIK" format=3 uid="uid://dc8g0boqs7w3a"]
 
 [resource]
-target_nodepath = NodePath("../IKTargets/HeadTarget")
+target_nodepath = NodePath("/root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/MainScene/Sidouska/Tete")
 tip_nodepath = NodePath("Hanches/Ventre/Cou")
 ccdik_data_chain_length = 1
 joint_data/0/bone_index = 7

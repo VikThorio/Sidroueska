@@ -199,12 +199,10 @@ rest = Transform2D(1, 0, 0, 1, 0, 0)
 [node name="JambeDroite" type="Bone2D" parent="Skeleton2D/Hanches"]
 position = Vector2(58, 57)
 rest = Transform2D(1, 0, 0, 1, 58, 57)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="GenouDroite" type="Bone2D" parent="Skeleton2D/Hanches/JambeDroite"]
 position = Vector2(49, 269)
 rest = Transform2D(1, 0, 0, 1, 49, 269)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="PiedDroit" type="Bone2D" parent="Skeleton2D/Hanches/JambeDroite/GenouDroite"]
 position = Vector2(40, 255)
@@ -216,12 +214,10 @@ bone_angle = 0.0
 [node name="JambeGauche" type="Bone2D" parent="Skeleton2D/Hanches"]
 position = Vector2(-52, 57)
 rest = Transform2D(1, 0, 0, 1, -52, 57)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="GenouGauche" type="Bone2D" parent="Skeleton2D/Hanches/JambeGauche"]
 position = Vector2(-40, 271)
 rest = Transform2D(1, 0, 0, 1, -40, 271)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="PiedGauche" type="Bone2D" parent="Skeleton2D/Hanches/JambeGauche/GenouGauche"]
 position = Vector2(-41, 249)
@@ -233,17 +229,14 @@ bone_angle = 0.0
 [node name="Ventre" type="Bone2D" parent="Skeleton2D/Hanches"]
 position = Vector2(0, -43)
 rest = Transform2D(1, 0, 0, 1, 0, -43)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="BrasDroit" type="Bone2D" parent="Skeleton2D/Hanches/Ventre"]
 position = Vector2(48, -105)
 rest = Transform2D(1, 0, 0, 1, 48, -105)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="CoudeDroit" type="Bone2D" parent="Skeleton2D/Hanches/Ventre/BrasDroit"]
 position = Vector2(45, 130)
 rest = Transform2D(1, 0, 0, 1, 45, 130)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="MainDroite" type="Bone2D" parent="Skeleton2D/Hanches/Ventre/BrasDroit/CoudeDroit"]
 position = Vector2(36, 96)
@@ -255,12 +248,10 @@ bone_angle = 0.0
 [node name="BrasGauche" type="Bone2D" parent="Skeleton2D/Hanches/Ventre"]
 position = Vector2(-56, -101)
 rest = Transform2D(1, 0, 0, 1, -56, -101)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="CoudeGauche" type="Bone2D" parent="Skeleton2D/Hanches/Ventre/BrasGauche"]
 position = Vector2(-36, 128)
 rest = Transform2D(1, 0, 0, 1, -36, 128)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="MainGauche" type="Bone2D" parent="Skeleton2D/Hanches/Ventre/BrasGauche/CoudeGauche"]
 position = Vector2(-21, 104)
