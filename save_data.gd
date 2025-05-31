@@ -7,6 +7,8 @@ class_name MyData
 @export var label_colors: Array[Color] = []
 @export var labels_scale: float = 1.0
 @export var labels_shift: float = 150.0
+@export var path_sidou: String = ""
+@export var ventre_over_jeans: bool = false
 
 func copy_data(data: MyData):
     nb_quartiers = data.nb_quartiers
@@ -15,6 +17,8 @@ func copy_data(data: MyData):
     label_colors = data.label_colors
     labels_scale = data.labels_scale
     labels_shift = data.labels_shift
+    path_sidou = data.path_sidou
+    ventre_over_jeans = data.ventre_over_jeans
 
 func save_params():
     ResourceSaver.save(self, "user://parameters_data.tres")

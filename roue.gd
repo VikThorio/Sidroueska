@@ -2,6 +2,8 @@ extends Node2D
 
 var MAX_NUMBER = 50
 
+signal skin_changed
+
 @export var save_data: Resource
 
 var label_scene = preload("res://roue_label.tscn")
@@ -17,7 +19,6 @@ var temp_color: Color = Color.BLACK
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    
     border_values.resize(3000)
     border_values.fill(0.0)
 
@@ -142,3 +143,29 @@ func initialize_roue():
 
 func _on_sauvegarder_pressed() -> void:
     save_data.save_params()
+
+
+func _on_skin_pressed() -> void:
+    $FileDialog.visible = true
+
+
+func _on_skin_reset_pressed() -> void:
+    save_data.path_sidou = ""
+    skin_changed.emit()
+
+
+func _on_file_dialog_file_selected(path: String) -> void:
+    save_data.path_sidou = path
+    skin_changed.emit()
+
+
+func _on_check_box_toggled(toggled_on: bool) -> void:
+    save_data.ventre_over_jeans = toggled_on
+    skin_changed.emit()
+
+
+func _on_refresh_skin_pressed() -> void:
+    skin_changed.emit()
+
+func set_ventre_over_jambes(val: bool):
+    $Parameters/CheckBox.button_pressed = val
