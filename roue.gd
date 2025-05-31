@@ -21,6 +21,9 @@ var temp_color: Color = Color.BLACK
 func _ready() -> void:
     border_values.resize(3000)
     border_values.fill(0.0)
+    if save_data.path_dir == "":
+        var dir = DirAccess.open($FileDialog.current_dir)
+        save_data.path_dir = DirAccess.get_drive_name(dir.get_current_drive())
 
 func _input(event):
     if event.is_action_pressed("toggle_parametres"):
@@ -146,6 +149,7 @@ func _on_sauvegarder_pressed() -> void:
 
 
 func _on_skin_pressed() -> void:
+    $FileDialog.current_dir = save_data.path_dir
     $FileDialog.visible = true
 
 
@@ -156,6 +160,7 @@ func _on_skin_reset_pressed() -> void:
 
 func _on_file_dialog_file_selected(path: String) -> void:
     save_data.path_sidou = path
+    save_data.path_dir = path.get_base_dir()
     skin_changed.emit()
 
 

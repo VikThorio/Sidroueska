@@ -9,6 +9,7 @@ class_name MyData
 @export var labels_shift: float = 150.0
 @export var path_sidou: String = ""
 @export var ventre_over_jeans: bool = false
+@export var path_dir: String = ""
 
 func copy_data(data: MyData):
     nb_quartiers = data.nb_quartiers
@@ -19,6 +20,7 @@ func copy_data(data: MyData):
     labels_shift = data.labels_shift
     path_sidou = data.path_sidou
     ventre_over_jeans = data.ventre_over_jeans
+    path_dir= data.path_dir
 
 func save_params():
     ResourceSaver.save(self, "user://parameters_data.tres")

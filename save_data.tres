@@ -10,3 +10,5 @@ labels = Array[String]([])
 label_colors = Array[Color]([])
 labels_scale = 1.0
 labels_shift = 150.0
+path_sidou = ""
+ventre_over_jeans = false

@@ -261,8 +261,8 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_jfl51")
 
 [node name="FileDialog" type="FileDialog" parent="."]
-title = "Ouvrir un fichier"
-ok_button_text = "Ouvrir"
+title = "Open a File"
+ok_button_text = "Open"
 cancel_button_text = "Annuler"
 file_mode = 0
 access = 2
