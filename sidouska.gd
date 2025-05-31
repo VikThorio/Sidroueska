@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var save_data: Resource
+
 @export var main_droite: Node2D
 @export var main_gauche: Node2D
 @export var pied_droit: Node2D
@@ -47,3 +49,27 @@ func _on_timer_yeux_timeout() -> void:
     
     double_clignement = randf() > 0.9
     timerYeux.start(randf_range(2.0, 4.0))
+
+func set_textures_polygons():
+    var sidou_texture: ImageTexture
+    var sidou_image: Image = Image.new()
+    var sidou_texture_default: CompressedTexture2D = load("res://sidous_ter.png")
+    if save_data.path_sidou == "":
+        for poly: Polygon2D in $Polygons.get_children():
+            poly.texture = sidou_texture_default
+    else:
+        sidou_image.load(save_data.path_sidou)
+        sidou_texture = ImageTexture.new()
+        sidou_texture.set_image(sidou_image)
+        if sidou_texture.get_size() != sidou_texture_default.get_size():
+            for poly: Polygon2D in $Polygons.get_children():
+                poly.texture = sidou_texture_default
+        else:
+            for poly: Polygon2D in $Polygons.get_children():
+                poly.texture = sidou_texture
+    
+    if save_data.ventre_over_jeans:
+        $Polygons/Torse.z_index = 1
+    else:
+        $Polygons/Torse.z_index = 0
+    

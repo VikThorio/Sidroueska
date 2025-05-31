@@ -52,23 +52,23 @@ scale = Vector2(0.763675, 0.763675)
 offset_left = 555.0
 offset_top = -381.0
 offset_right = 745.0
-offset_bottom = 310.0
+offset_bottom = 423.0
 color = Color(0.17, 0.17, 0.17, 1)
 
 [node name="ColorPicker" type="ColorPickerButton" parent="Parameters"]
-offset_left = 567.0
-offset_top = -236.0
-offset_right = 735.0
-offset_bottom = -185.0
+offset_left = 567.21
+offset_top = -123.516
+offset_right = 735.21
+offset_bottom = -72.5161
 focus_mode = 0
 color = Color(1, 1, 1, 1)
 edit_alpha = false
 
 [node name="PaintSlice" type="Button" parent="Parameters"]
-offset_left = 570.0
-offset_top = -174.0
-offset_right = 641.0
-offset_bottom = -124.0
+offset_left = 570.21
+offset_top = -61.516
+offset_right = 641.21
+offset_bottom = -11.516
 focus_mode = 0
 theme = SubResource("Theme_filp8")
 theme_override_font_sizes/font_size = 36
@@ -78,10 +78,10 @@ button_group = ExtResource("6_ki3dx")
 text = "◔"
 
 [node name="PainText" type="Button" parent="Parameters"]
-offset_left = 660.0
-offset_top = -173.0
-offset_right = 731.0
-offset_bottom = -123.0
+offset_left = 660.21
+offset_top = -60.5161
+offset_right = 731.21
+offset_bottom = -10.5161
 focus_mode = 0
 theme = SubResource("Theme_filp8")
 theme_override_font_sizes/font_size = 42
@@ -90,10 +90,10 @@ button_group = ExtResource("6_ki3dx")
 text = "Abc"
 
 [node name="ChangeText" type="Button" parent="Parameters"]
-offset_left = 564.0
-offset_top = 109.381
-offset_right = 736.0
-offset_bottom = 153.381
+offset_left = 564.21
+offset_top = 221.865
+offset_right = 736.21
+offset_bottom = 265.865
 focus_mode = 0
 theme = SubResource("Theme_filp8")
 theme_override_font_sizes/font_size = 30
@@ -102,10 +102,10 @@ button_group = ExtResource("6_ki3dx")
 text = "✎ Abc  "
 
 [node name="CopierColler" type="Button" parent="Parameters"]
-offset_left = 564.0
-offset_top = 162.69
-offset_right = 736.0
-offset_bottom = 234.69
+offset_left = 564.21
+offset_top = 275.174
+offset_right = 736.21
+offset_bottom = 347.174
 focus_mode = 0
 theme = SubResource("Theme_filp8")
 theme_override_font_sizes/font_size = 25
@@ -115,19 +115,19 @@ text = "Copier/Coller
 case et texte"
 
 [node name="Label" type="Label" parent="Parameters"]
-offset_left = 555.0
-offset_top = -267.0
-offset_right = 745.0
-offset_bottom = -244.0
+offset_left = 555.21
+offset_top = -154.516
+offset_right = 745.21
+offset_bottom = -131.516
 theme_override_font_sizes/font_size = 21
 text = "Changer les couleurs"
 horizontal_alignment = 1
 
 [node name="Label5" type="Label" parent="Parameters"]
-offset_left = 564.0
-offset_top = 40.0
-offset_right = 736.0
-offset_bottom = 63.0
+offset_left = 564.21
+offset_top = 152.484
+offset_right = 736.21
+offset_bottom = 175.484
 theme_override_font_sizes/font_size = 21
 text = "Changer le texte"
 
@@ -140,18 +140,18 @@ theme_override_font_sizes/font_size = 21
 text = "Nombre de cases"
 
 [node name="Label3" type="Label" parent="Parameters"]
-offset_left = 566.0
-offset_top = -92.0
-offset_right = 735.0
-offset_bottom = -69.0
+offset_left = 566.21
+offset_top = 20.484
+offset_right = 735.21
+offset_bottom = 43.484
 theme_override_font_sizes/font_size = 21
 text = "Taille du texte"
 
 [node name="Label4" type="Label" parent="Parameters"]
-offset_left = 566.0
-offset_top = -37.0
-offset_right = 735.0
-offset_bottom = -14.0
+offset_left = 566.21
+offset_top = 75.484
+offset_right = 735.21
+offset_bottom = 98.484
 theme_override_font_sizes/font_size = 21
 text = "Décalage du texte"
 
@@ -166,42 +166,81 @@ value = 3.0
 rounded = true
 
 [node name="SizeSlider" type="HSlider" parent="Parameters"]
-offset_left = 566.0
-offset_top = -65.0
-offset_right = 735.0
-offset_bottom = -49.0
+offset_left = 566.21
+offset_top = 47.484
+offset_right = 735.21
+offset_bottom = 63.484
 focus_mode = 0
 max_value = 2.0
 step = 0.0
 value = 1.0
 
 [node name="ShiftSlider" type="HSlider" parent="Parameters"]
-offset_left = 567.0
-offset_top = -11.0
-offset_right = 736.0
-offset_bottom = 5.0
+offset_left = 567.21
+offset_top = 101.484
+offset_right = 736.21
+offset_bottom = 117.484
 focus_mode = 0
 min_value = -500.0
 max_value = 1500.0
 step = 0.0
 
 [node name="LineEdit" type="LineEdit" parent="Parameters"]
-offset_left = 564.0
-offset_top = 67.0
-offset_right = 736.0
-offset_bottom = 100.0
+offset_left = 564.21
+offset_top = 179.484
+offset_right = 736.21
+offset_bottom = 212.484
 focus_mode = 1
 theme_override_font_sizes/font_size = 21
 placeholder_text = "Texte à écrire..."
 
 [node name="Sauvegarder" type="Button" parent="Parameters"]
-offset_left = 575.69
-offset_top = 243.31
-offset_right = 724.69
-offset_bottom = 299.31
+offset_left = 575.9
+offset_top = 355.794
+offset_right = 724.9
+offset_bottom = 411.794
 focus_mode = 0
 theme_override_font_sizes/font_size = 30
 text = "ENREGISTRER"
+
+[node name="Skin" type="Button" parent="Parameters"]
+offset_left = 567.0
+offset_top = -310.0
+offset_right = 693.0
+offset_bottom = -268.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 26
+text = "Changer skin"
+
+[node name="RefreshSkin" type="Button" parent="Parameters"]
+offset_left = 699.0
+offset_top = -309.0
+offset_right = 732.0
+offset_bottom = -268.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 23
+text = "⟳"
+
+[node name="SkinReset" type="Button" parent="Parameters"]
+offset_left = 566.995
+offset_top = -259.273
+offset_right = 734.995
+offset_bottom = -217.273
+focus_mode = 0
+theme_override_font_sizes/font_size = 26
+text = "Reset skin"
+
+[node name="CheckBox" type="CheckBox" parent="Parameters"]
+offset_left = 564.0
+offset_top = -210.0
+offset_right = 730.0
+offset_bottom = -166.0
+focus_mode = 0
+theme_override_constants/h_separation = 10
+theme_override_constants/icon_max_width = 50
+theme_override_font_sizes/font_size = 18
+text = "Ventre par
+dessus jambes"
 
 [node name="Roue" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_34hw4")
@@ -221,8 +260,22 @@ debug_color = Color(0, 0.6, 0.701961, 0)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_jfl51")
 
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Ouvrir un fichier"
+ok_button_text = "Ouvrir"
+cancel_button_text = "Annuler"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.png")
+use_native_dialog = true
+
 [connection signal="value_changed" from="Parameters/SpinBox" to="." method="_on_spin_box_value_changed"]
 [connection signal="value_changed" from="Parameters/SizeSlider" to="." method="_on_size_slider_value_changed"]
 [connection signal="value_changed" from="Parameters/ShiftSlider" to="." method="_on_shift_slider_value_changed"]
 [connection signal="pressed" from="Parameters/Sauvegarder" to="." method="_on_sauvegarder_pressed"]
+[connection signal="pressed" from="Parameters/Skin" to="." method="_on_skin_pressed"]
+[connection signal="pressed" from="Parameters/RefreshSkin" to="." method="_on_refresh_skin_pressed"]
+[connection signal="pressed" from="Parameters/SkinReset" to="." method="_on_skin_reset_pressed"]
+[connection signal="toggled" from="Parameters/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="input_event" from="Roue/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

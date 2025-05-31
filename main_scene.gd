@@ -9,8 +9,8 @@ func _ready() -> void:
         save_data.save_params()
     else:
         $Roue.clear_and_generate_labels()
-
-
+    $Sidouska.set_textures_polygons()
+    $Roue.set_ventre_over_jambes(save_data.ventre_over_jeans)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
     pass
@@ -30,3 +30,7 @@ func update_targets():
 func _on_animation_player_2_animation_changed(old_name: StringName, new_name: StringName) -> void:
     if new_name == "lancer_roue_2":
         $Roue.start_spin()
+
+
+func _on_roue_skin_changed() -> void:
+    $Sidouska.set_textures_polygons()
