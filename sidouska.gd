@@ -3,17 +3,29 @@ extends Node2D
 
 @export var save_data: Resource
 
+@export_category("Nodes position")
 @export var main_droite: Node2D
 @export var main_gauche: Node2D
 @export var pied_droit: Node2D
 @export var pied_gauche: Node2D
 @export var tete: Node2D
 
+@export_category("Nodes pointing")
+@export var main_droite_pointing: Node2D
+@export var main_gauche_pointing: Node2D
+@export var pied_droit_pointing: Node2D
+@export var pied_gauche_pointing: Node2D
+
 var modif_main_droite: SkeletonModification2DCCDIK = preload("res://Modifications/modif_hand_right.tres")
 var modif_main_gauche: SkeletonModification2DCCDIK = preload("res://Modifications/modif_hand_left.tres")
 var modif_pied_droit: SkeletonModification2DCCDIK = preload("res://Modifications/modif_pied_droit.tres")
 var modif_pied_gauche: SkeletonModification2DCCDIK = preload("res://Modifications/modif_pied_gauche.tres")
 var modif_tete: SkeletonModification2DCCDIK = preload("res://Modifications/modif_head.tres")
+
+var modif_main_droite_pointing: SkeletonModification2DLookAt = preload("res://Modifications/Pointing/modif_hand_right_pointing.tres")
+var modif_main_gauche_pointing: SkeletonModification2DLookAt = preload("res://Modifications/Pointing/modif_hand_left_pointing.tres")
+var modif_pied_droit_pointing: SkeletonModification2DLookAt = preload("res://Modifications/Pointing/modif_pied_droit_pointing.tres")
+var modif_pied_gauche_pointing: SkeletonModification2DLookAt = preload("res://Modifications/Pointing/modif_pied_gauche_pointing.tres")
 
 var next_clignement: float = 3.0
 var double_clignement: bool = false
@@ -40,7 +52,12 @@ func update_targets():
     modif_pied_droit.target_nodepath = pied_droit.get_path()
     modif_pied_gauche.target_nodepath = pied_gauche.get_path()
     modif_tete.target_nodepath = tete.get_path()
-
+    
+    modif_main_droite_pointing.target_nodepath = main_droite_pointing.get_path()
+    modif_main_gauche_pointing.target_nodepath = main_gauche_pointing.get_path()
+    modif_pied_droit_pointing.target_nodepath = pied_droit_pointing.get_path()
+    modif_pied_gauche_pointing.target_nodepath = pied_gauche_pointing.get_path()
+    
 
 func _on_timer_yeux_timeout() -> void:
     if double_clignement:

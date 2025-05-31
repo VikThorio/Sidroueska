@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://x2uo82d3b28c"]
+[gd_scene load_steps=24 format=3 uid="uid://x2uo82d3b28c"]
 
 [ext_resource type="Script" uid="uid://cefr1yrm6o5v6" path="res://sidouska.gd" id="1_u56br"]
 [ext_resource type="Resource" uid="uid://b0xvsss84ybvm" path="res://save_data.tres" id="2_enp3d"]
@@ -11,21 +11,29 @@
 [ext_resource type="Texture2D" uid="uid://birn7yin7rder" path="res://sidous_mouth_1.png" id="8_mc88t"]
 [ext_resource type="Texture2D" uid="uid://ck0bl1l4kjxko" path="res://sidous_eyes_1.png" id="8_p3wal"]
 [ext_resource type="Texture2D" uid="uid://bb5a40uji128" path="res://sidous_mouth_2.png" id="9_qtxip"]
+[ext_resource type="SkeletonModification2DLookAt" uid="uid://bhue31tqbtp0d" path="res://Modifications/Pointing/modif_pied_gauche_pointing.tres" id="9_wbuel"]
 [ext_resource type="Texture2D" uid="uid://5bejd0t8deu6" path="res://sidous_eyes_2.png" id="9_xagkp"]
 [ext_resource type="Texture2D" uid="uid://c2f0sqacout1e" path="res://sidous_eyes_3.png" id="10_1imrb"]
+[ext_resource type="SkeletonModification2DLookAt" uid="uid://bgtsj845abqu1" path="res://Modifications/Pointing/modif_pied_droit_pointing.tres" id="10_70ucl"]
 [ext_resource type="Texture2D" uid="uid://c4nshfvqxqcyv" path="res://sidous_mouth_3.png" id="10_enp3d"]
 [ext_resource type="Texture2D" uid="uid://be1ow8p8ssptp" path="res://sidous_mouth_4.png" id="11_474wn"]
 [ext_resource type="Texture2D" uid="uid://dymn4j5o3a0m6" path="res://sidous_hair.png" id="11_cxumk"]
+[ext_resource type="SkeletonModification2DLookAt" uid="uid://b65xc7y5lvpeo" path="res://Modifications/Pointing/modif_hand_right_pointing.tres" id="11_x3ory"]
+[ext_resource type="SkeletonModification2DLookAt" uid="uid://o1lfnewbtfps" path="res://Modifications/Pointing/modif_hand_left_pointing.tres" id="12_y4k2e"]
 
 [sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_txswi"]
 enabled = true
-modification_count = 6
+modification_count = 10
 modifications/0 = ExtResource("2_tqyfc")
 modifications/1 = ExtResource("3_lpvgm")
 modifications/2 = ExtResource("4_5jxov")
 modifications/3 = ExtResource("5_hyjrf")
 modifications/4 = ExtResource("6_f3err")
 modifications/5 = ExtResource("4_5jxov")
+modifications/6 = ExtResource("9_wbuel")
+modifications/7 = ExtResource("10_70ucl")
+modifications/8 = ExtResource("11_x3ory")
+modifications/9 = ExtResource("12_y4k2e")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_odwy1"]
 animations = [{
@@ -127,7 +135,7 @@ uv = PackedVector2Array(899.978, 961.176, 963.135, 940.581, 1045.52, 925.478, 11
 bones = ["Hanches", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hanches/JambeDroite/GenouDroite/PiedDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hanches/JambeGauche/GenouGauche/PiedGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasDroit/CoudeDroit/MainDroite", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1), "Hanches/Ventre/BrasGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/BrasGauche/CoudeGauche/MainGauche", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hanches/Ventre/Cou", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)]
 
 [node name="MainGauche" type="Polygon2D" parent="Polygons"]
-position = Vector2(101, -377)
+position = Vector2(95, -381)
 texture = ExtResource("2_qtxip")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(120.213, 921.203, 204.349, 938.696, 265.992, 957.856, 290.983, 1008.67, 230.172, 1115.3, 83.5605, 1118.63, 52.7387, 996.175)
@@ -210,6 +218,7 @@ rest = Transform2D(1, 0, 0, 1, 40, 255)
 auto_calculate_length_and_angle = false
 length = 16.0
 bone_angle = 0.0
+metadata/_local_pose_override_enabled_ = true
 
 [node name="JambeGauche" type="Bone2D" parent="Skeleton2D/Hanches"]
 position = Vector2(-52, 57)
@@ -225,6 +234,7 @@ rest = Transform2D(1, 0, 0, 1, -41, 249)
 auto_calculate_length_and_angle = false
 length = 16.0
 bone_angle = 0.0
+metadata/_local_pose_override_enabled_ = true
 
 [node name="Ventre" type="Bone2D" parent="Skeleton2D/Hanches"]
 position = Vector2(0, -43)
@@ -244,6 +254,7 @@ rest = Transform2D(1, 0, 0, 1, 36, 96)
 auto_calculate_length_and_angle = false
 length = 16.0
 bone_angle = 0.0
+metadata/_local_pose_override_enabled_ = true
 
 [node name="BrasGauche" type="Bone2D" parent="Skeleton2D/Hanches/Ventre"]
 position = Vector2(-56, -101)
@@ -254,11 +265,14 @@ position = Vector2(-36, 128)
 rest = Transform2D(1, 0, 0, 1, -36, 128)
 
 [node name="MainGauche" type="Bone2D" parent="Skeleton2D/Hanches/Ventre/BrasGauche/CoudeGauche"]
-position = Vector2(-21, 104)
+position = Vector2(-24.2685, 111.7)
+rotation = -0.449816
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(1, 0, 0, 1, -21, 104)
 auto_calculate_length_and_angle = false
 length = 16.0
 bone_angle = 0.0
+metadata/_local_pose_override_enabled_ = true
 
 [node name="Cou" type="Bone2D" parent="Skeleton2D/Hanches/Ventre"]
 position = Vector2(-7, -135)
@@ -277,7 +291,8 @@ frame_progress = 0.8062
 [node name="Yeux" type="AnimatedSprite2D" parent="Skeleton2D/Hanches/Ventre/Cou/Tête"]
 position = Vector2(-7, -73)
 sprite_frames = SubResource("SpriteFrames_mc88t")
-animation = &"double"
+frame = 4
+frame_progress = 1.0
 
 [node name="SidousHair" type="Sprite2D" parent="Skeleton2D/Hanches/Ventre/Cou/Tête"]
 visible = false
@@ -285,20 +300,33 @@ position = Vector2(-10, -101)
 texture = ExtResource("11_cxumk")
 
 [node name="TimerYeux" type="Timer" parent="Skeleton2D/Hanches/Ventre/Cou/Tête"]
+wait_time = 3.67773
 
 [node name="IKTargets" type="Node2D" parent="."]
 
 [node name="FootLeftTarget" type="Node2D" parent="IKTargets"]
-position = Vector2(-142, 641)
+position = Vector2(-167, 574)
+
+[node name="FootLeftPointing" type="Node2D" parent="IKTargets/FootLeftTarget"]
+position = Vector2(-159, -5)
 
 [node name="FootRightTarget" type="Node2D" parent="IKTargets"]
 position = Vector2(131, 592)
 
+[node name="FootRightPointing" type="Node2D" parent="IKTargets/FootRightTarget"]
+position = Vector2(173, -9)
+
 [node name="HandRightTarget" type="Node2D" parent="IKTargets"]
 position = Vector2(261, -106)
 
+[node name="HandRightPointing" type="Node2D" parent="IKTargets/HandRightTarget"]
+position = Vector2(84, -38)
+
 [node name="HandLeftTarget" type="Node2D" parent="IKTargets"]
 position = Vector2(-252, -60)
+
+[node name="HandLeftPointing" type="Node2D" parent="IKTargets/HandLeftTarget"]
+position = Vector2(-168, -69)
 
 [node name="HeadTarget" type="Node2D" parent="IKTargets"]
 position = Vector2(-3, -265)
