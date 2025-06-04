@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
     pass
 
 func set_decalage(val: float):
-    $Label.position.x = -1800.0 - val
+    $Label.position.x = - val
 
 
 func set_case(numero: int, count: int):

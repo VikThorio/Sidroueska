@@ -3,14 +3,17 @@ extends Node2D
 var MAX_NUMBER = 50
 
 signal skin_changed
+signal stopped_spinning
 
 @export var save_data: Resource
+@export var winning_point: Node2D
 
 var label_scene = preload("res://roue_label.tscn")
 
 var is_spinning: bool = false
 var speed: float = 0.0
 var acceleration: float = 1000.0
+var min_speed: float = PI * 0.4
 
 var border_values: Array[float] = []
 var params_visible: bool = false
@@ -36,8 +39,12 @@ func _input(event):
 func _process(delta: float) -> void:
     if is_spinning:
         $Roue.rotation -= speed * delta
-        speed -= acceleration * delta
-        if speed <= 0.1:
+        $Roue.rotation = fposmod($Roue.rotation, 2.0 * PI)
+        
+        speed -= get_acceleration() * delta
+        
+        if speed <= 0.01:
+            stopped_spinning.emit()
             is_spinning = false
             speed = 0.0
 
@@ -113,7 +120,7 @@ func start_spin():
     #if !is_spinning:
     is_spinning = true
     speed = randf_range(PI * 3.0, PI * 5.0)
-    acceleration = randf_range(PI * 0.5, PI * 0.6)
+    acceleration = randf_range(PI * 1.0, PI * 1.2)
 
 func _on_size_slider_value_changed(value: float) -> void:
     save_data.labels_scale = value
@@ -174,3 +181,16 @@ func _on_refresh_skin_pressed() -> void:
 
 func set_ventre_over_jambes(val: bool):
     $Parameters/CheckBox.button_pressed = val
+
+func get_roue_rotation():
+    return $Roue.rotation
+
+func get_acceleration():
+    var pos: Vector2 = winning_point.global_position - global_position
+    var angle: float = atan2(pos.y, pos.x) - get_roue_rotation()
+    while angle < -PI:
+        angle += 2.0 * PI
+    var case_idx_f: float = (angle + PI) / (2.0 * PI) * float(save_data.nb_quartiers)
+    var dist: float = absf(case_idx_f - roundf(case_idx_f)) / 0.5
+    dist = maxf(dist - 0.3, 0.0) / 0.7
+    return sqrt(dist) * acceleration
