@@ -1,29 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://cnowndpy001lq"]
+[gd_scene load_steps=10 format=4 uid="uid://cnowndpy001lq"]
 
 [ext_resource type="Script" uid="uid://c17v3fixlx2nw" path="res://roue.gd" id="1_34hw4"]
 [ext_resource type="Texture2D" uid="uid://sfs88342vy0a" path="res://roue.png" id="1_hg3px"]
 [ext_resource type="Shader" uid="uid://cg5p8f122ihvd" path="res://roue.gdshader" id="1_jfl51"]
 [ext_resource type="Resource" uid="uid://b0xvsss84ybvm" path="res://save_data.tres" id="2_filp8"]
 [ext_resource type="Texture2D" uid="uid://ddl15k8tn3pml" path="res://pin.png" id="2_jfl51"]
-[ext_resource type="ButtonGroup" uid="uid://c6el1jyawdj5q" path="res://paint_buttons_group.tres" id="6_ki3dx"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34hw4"]
-bg_color = Color(0.355528, 0.281858, 0.289407, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0j34"]
-bg_color = Color(0.531565, 0.445295, 0.0322104, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="Theme" id="Theme_filp8"]
-Button/styles/normal = SubResource("StyleBoxFlat_34hw4")
-Button/styles/pressed = SubResource("StyleBoxFlat_j0j34")
+[ext_resource type="PackedScene" uid="uid://cqha4ewy1pm1" path="res://boutons_complexes.tscn" id="7_ki3dx"]
 
 [sub_resource type="Theme" id="Theme_ki3dx"]
 default_font_size = 21
@@ -48,207 +30,222 @@ position = Vector2(-96, 45)
 scale = Vector2(0.763675, 0.763675)
 
 [node name="ColorRect" type="ColorRect" parent="Parameters"]
-offset_left = 555.0
-offset_top = -381.0
-offset_right = 745.0
-offset_bottom = 423.0
+offset_left = 564.0
+offset_top = -386.0
+offset_right = 817.0
+offset_bottom = 172.0
 color = Color(0.17, 0.17, 0.17, 1)
 
-[node name="ColorPicker" type="ColorPickerButton" parent="Parameters"]
-offset_left = 567.0
-offset_top = -124.0
-offset_right = 643.0
-offset_bottom = -73.0
-focus_mode = 0
-color = Color(1, 1, 1, 1)
-edit_alpha = false
+[node name="ColorRect" type="ColorRect" parent="Parameters/ColorRect"]
+layout_mode = 0
+offset_top = 594.286
+offset_right = 252.0
+offset_bottom = 689.286
+color = Color(0.17, 0.17, 0.17, 1)
 
-[node name="ColorPickerText" type="ColorPickerButton" parent="Parameters"]
-offset_left = 659.0
-offset_top = -124.0
-offset_right = 731.0
-offset_bottom = -73.0
-focus_mode = 0
-color = Color(1, 1, 1, 1)
-edit_alpha = false
+[node name="ColorRect2" type="ColorRect" parent="Parameters"]
+offset_left = -554.0
+offset_top = -397.0
+offset_right = -301.0
+offset_bottom = -214.0
+color = Color(0.17, 0.17, 0.17, 1)
 
-[node name="PaintSlice" type="Button" parent="Parameters"]
-offset_left = 570.21
-offset_top = -61.516
-offset_right = 641.21
-offset_bottom = -11.516
-focus_mode = 0
-theme = SubResource("Theme_filp8")
-theme_override_font_sizes/font_size = 36
-toggle_mode = true
-button_pressed = true
-button_group = ExtResource("6_ki3dx")
-text = "◔"
+[node name="Line2D2" type="Line2D" parent="Parameters"]
+position = Vector2(-17.0229, 119.161)
+scale = Vector2(1.71468, 1.71468)
+points = PackedVector2Array(353, -269, 477.297, -269)
+width = 2.0
+default_color = Color(0, 0, 0, 0.745098)
 
-[node name="PainText" type="Button" parent="Parameters"]
-offset_left = 660.21
-offset_top = -60.5161
-offset_right = 731.21
-offset_bottom = -10.5161
-focus_mode = 0
-theme = SubResource("Theme_filp8")
-theme_override_font_sizes/font_size = 42
-toggle_mode = true
-button_group = ExtResource("6_ki3dx")
-text = "Abc"
+[node name="Line2D" type="Line2D" parent="Parameters/Line2D2"]
+position = Vector2(82.4769, -64.9124)
+scale = Vector2(0.763675, 0.763675)
+points = PackedVector2Array(353, -269, 515, -269)
+width = 2.0
 
-[node name="ChangeText" type="Button" parent="Parameters"]
-offset_left = 565.686
-offset_top = 79.8567
-offset_right = 737.686
-offset_bottom = 123.857
-focus_mode = 0
-theme = SubResource("Theme_filp8")
-theme_override_font_sizes/font_size = 30
-toggle_mode = true
-button_group = ExtResource("6_ki3dx")
-text = "✎ Abc  "
+[node name="Line2D3" type="Line2D" parent="Parameters"]
+position = Vector2(-991.259, -5.23783)
+scale = Vector2(1.30946, 1.30946)
+points = PackedVector2Array(353, -269, 515, -269)
+width = 2.0
+default_color = Color(0, 0, 0, 0.717647)
 
-[node name="CopierColler" type="Button" parent="Parameters"]
-offset_left = 564.21
-offset_top = 275.174
-offset_right = 736.21
-offset_bottom = 347.174
-focus_mode = 0
-theme = SubResource("Theme_filp8")
-theme_override_font_sizes/font_size = 25
-toggle_mode = true
-button_group = ExtResource("6_ki3dx")
-text = "Copier/Coller
-case et texte"
+[node name="Line2D2" type="Line2D" parent="Parameters/Line2D3"]
+position = Vector2(-2.00006, -1.67138)
+points = PackedVector2Array(353, -269, 515, -269)
+width = 2.0
 
 [node name="Label" type="Label" parent="Parameters"]
-offset_left = 555.21
-offset_top = -154.516
-offset_right = 745.21
-offset_bottom = -131.516
+offset_left = 586.847
+offset_top = -295.526
+offset_right = 776.847
+offset_bottom = -272.526
 theme_override_font_sizes/font_size = 21
-text = "Changer les couleurs"
-horizontal_alignment = 1
+text = "Couleur du texte :"
 
 [node name="Label5" type="Label" parent="Parameters"]
-offset_left = 565.686
-offset_top = 10.4757
-offset_right = 737.686
-offset_bottom = 33.4757
+offset_left = 586.637
+offset_top = -258.809
+offset_right = 758.637
+offset_bottom = -235.809
 theme_override_font_sizes/font_size = 21
-text = "Changer le texte"
+text = "Couleur du fond :"
 
 [node name="Label2" type="Label" parent="Parameters"]
-offset_left = 564.0
-offset_top = -377.0
-offset_right = 733.0
-offset_bottom = -354.0
+offset_left = 586.637
+offset_top = -331.293
+offset_right = 755.637
+offset_bottom = -308.293
 theme_override_font_sizes/font_size = 21
-text = "Nombre de cases"
+text = "Nombre de cases :"
+
+[node name="Label6" type="Label" parent="Parameters"]
+offset_left = 584.381
+offset_top = -378.003
+offset_right = 796.381
+offset_bottom = -352.003
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 25
+text = "Paramètres de la roue"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="Parameters"]
+offset_left = -533.896
+offset_top = -391.528
+offset_right = -321.896
+offset_bottom = -365.528
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 25
+text = "Paramètres de la roue"
+horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="Parameters"]
-offset_left = 566.21
-offset_top = 151.897
-offset_right = 735.21
-offset_bottom = 174.897
+offset_left = 585.0
+offset_top = 64.7107
+offset_right = 798.0
+offset_bottom = 87.7107
 theme_override_font_sizes/font_size = 21
 text = "Taille du texte"
 
 [node name="Label4" type="Label" parent="Parameters"]
-offset_left = 566.21
-offset_top = 206.897
-offset_right = 735.21
-offset_bottom = 229.897
+offset_left = 585.0
+offset_top = 113.163
+offset_right = 799.0
+offset_bottom = 136.163
 theme_override_font_sizes/font_size = 21
 text = "Décalage du texte"
 
 [node name="SpinBox" type="SpinBox" parent="Parameters"]
-offset_left = 565.0
-offset_top = -347.0
-offset_right = 736.0
-offset_bottom = -320.0
+offset_left = 733.0
+offset_top = -332.599
+offset_right = 803.0
+offset_bottom = -302.599
 theme = SubResource("Theme_ki3dx")
 max_value = 50.0
 value = 3.0
 rounded = true
 
 [node name="SizeSlider" type="HSlider" parent="Parameters"]
-offset_left = 566.21
-offset_top = 178.897
-offset_right = 735.21
-offset_bottom = 194.897
+offset_left = 585.0
+offset_top = 91.7107
+offset_right = 799.0
+offset_bottom = 107.711
 focus_mode = 0
 max_value = 2.0
 step = 0.0
 value = 1.0
 
 [node name="ShiftSlider" type="HSlider" parent="Parameters"]
-offset_left = 567.21
-offset_top = 232.897
-offset_right = 736.21
-offset_bottom = 248.897
+offset_left = 584.0
+offset_top = 138.711
+offset_right = 799.0
+offset_bottom = 154.711
 focus_mode = 0
 min_value = -500.0
 max_value = 1500.0
 step = 0.0
 
-[node name="LineEdit" type="LineEdit" parent="Parameters"]
-offset_left = 565.686
-offset_top = 37.4757
-offset_right = 737.686
-offset_bottom = 70.4757
-focus_mode = 1
-theme_override_font_sizes/font_size = 21
-placeholder_text = "Texte à écrire..."
-
 [node name="Sauvegarder" type="Button" parent="Parameters"]
-offset_left = 575.9
-offset_top = 355.794
-offset_right = 724.9
-offset_bottom = 411.794
+offset_left = 588.0
+offset_top = 228.049
+offset_right = 794.0
+offset_bottom = 284.049
 focus_mode = 0
 theme_override_font_sizes/font_size = 30
-text = "ENREGISTRER"
+text = "Enregistrer"
 
 [node name="Skin" type="Button" parent="Parameters"]
-offset_left = 567.0
-offset_top = -310.0
-offset_right = 693.0
-offset_bottom = -268.0
+offset_left = -529.0
+offset_top = -347.0
+offset_right = -363.0
+offset_bottom = -305.0
 focus_mode = 0
 theme_override_font_sizes/font_size = 26
 text = "Changer skin"
 
 [node name="RefreshSkin" type="Button" parent="Parameters"]
-offset_left = 699.0
-offset_top = -309.0
-offset_right = 732.0
-offset_bottom = -268.0
+offset_left = -353.869
+offset_top = -346.155
+offset_right = -320.869
+offset_bottom = -305.155
 focus_mode = 0
 theme_override_font_sizes/font_size = 23
 text = "⟳"
 
 [node name="SkinReset" type="Button" parent="Parameters"]
-offset_left = 566.995
-offset_top = -259.273
-offset_right = 734.995
-offset_bottom = -217.273
+offset_left = -528.0
+offset_top = -296.0
+offset_right = -321.0
+offset_bottom = -254.0
 focus_mode = 0
 theme_override_font_sizes/font_size = 26
 text = "Reset skin"
 
 [node name="CheckBox" type="CheckBox" parent="Parameters"]
-offset_left = 564.0
-offset_top = -210.0
-offset_right = 730.0
-offset_bottom = -166.0
+offset_left = -531.0
+offset_top = -257.0
+offset_right = -313.0
+offset_bottom = -213.0
 focus_mode = 0
 theme_override_constants/h_separation = 10
 theme_override_constants/icon_max_width = 50
-theme_override_font_sizes/font_size = 18
-text = "Ventre par
-dessus jambes"
+theme_override_font_sizes/font_size = 17
+text = "Ventre par dessus les jambes"
+
+[node name="BoutonsComplexes" parent="Parameters" instance=ExtResource("7_ki3dx")]
+position = Vector2(574.852, -176.313)
+scale = Vector2(0.464857, 0.464857)
+
+[node name="ColorPicker" type="ColorPickerButton" parent="Parameters"]
+offset_left = 733.296
+offset_top = -261.428
+offset_right = 803.296
+offset_bottom = -230.428
+focus_mode = 0
+color = Color(0.768443, 0.497535, 0.584675, 1)
+edit_alpha = false
+
+[node name="ColorPickerText" type="ColorPickerButton" parent="Parameters"]
+offset_left = 733.0
+offset_top = -297.247
+offset_right = 803.0
+offset_bottom = -266.247
+focus_mode = 0
+color = Color(0.427644, 0.11537, 0.172835, 1)
+edit_alpha = false
+
+[node name="LineEdit" type="LineEdit" parent="Parameters"]
+offset_left = 584.0
+offset_top = -224.462
+offset_right = 803.0
+offset_bottom = -191.462
+focus_mode = 1
+theme_override_font_sizes/font_size = 21
+placeholder_text = "Texte de la case..."
 
 [node name="Roue" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_34hw4")

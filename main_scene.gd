@@ -22,7 +22,7 @@ func _input(event):
             $Sidouska/AnimationPlayer2.play("poser_main_roue_2")
             $Sidouska/AnimationPlayer2.queue("lancer_roue_2")
             $Sidouska/AnimationPlayer2.queue("reset_position")
-    if event.is_action_pressed("hide_background"):
+    if event.is_action_pressed("toggle_parametres"):
         $ColorRect.visible = !$ColorRect.visible
     if event.is_action_pressed("faire_coucou"):
         get_case_win()

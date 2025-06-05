@@ -63,13 +63,13 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
             var quartier_idx_f: float = angle / (2.0 * PI) * float(save_data.nb_quartiers);
             var quartier_idx: int = int(quartier_idx_f);
             
-            if $Parameters/PaintSlice.button_pressed or ($Parameters/CopierColler.button_pressed and has_copied):
+            if $Parameters/BoutonsComplexes.get_buttons_pressed()[1]:
                 save_data.colors[quartier_idx] = color_to_vector4($Parameters/ColorPicker.color)
                 $Roue.material.set_shader_parameter("couleurs", save_data.colors);
-            if $Parameters/PainText.button_pressed or ($Parameters/CopierColler.button_pressed and has_copied):
+            if $Parameters/BoutonsComplexes.get_buttons_pressed()[0]:
                 save_data.label_colors[quartier_idx] = $Parameters/ColorPickerText.color
                 $Roue/Labels.get_children()[quartier_idx].color = $Parameters/ColorPickerText.color
-            if $Parameters/ChangeText.button_pressed or ($Parameters/CopierColler.button_pressed and has_copied):
+            if $Parameters/BoutonsComplexes.get_buttons_pressed()[2]:
                 save_data.labels[quartier_idx] = $Parameters/LineEdit.text
                 $Roue/Labels.get_children()[quartier_idx].text = $Parameters/LineEdit.text
             clear_and_generate_labels()
@@ -80,13 +80,11 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
             var quartier_idx_f: float = angle / (2.0 * PI) * float(save_data.nb_quartiers);
             var quartier_idx: int = int(quartier_idx_f);
             
-            if $Parameters/CopierColler.button_pressed:
-                has_copied = true
-            if $Parameters/PaintSlice.button_pressed or $Parameters/CopierColler.button_pressed:
+            if $Parameters/BoutonsComplexes.get_buttons_pressed()[1]:
                 $Parameters/ColorPicker.color = vector4_to_color(save_data.colors[quartier_idx])
-            if $Parameters/PainText.button_pressed or $Parameters/CopierColler.button_pressed:
+            if $Parameters/BoutonsComplexes.get_buttons_pressed()[0]:
                 $Parameters/ColorPickerText.color = $Roue/Labels.get_children()[quartier_idx].color
-            if $Parameters/ChangeText.button_pressed or $Parameters/CopierColler.button_pressed:
+            if $Parameters/BoutonsComplexes.get_buttons_pressed()[2]:
                 $Parameters/LineEdit.text = $Roue/Labels.get_children()[quartier_idx].text
 
 func _on_spin_box_value_changed(value: float) -> void:

@@ -287,7 +287,8 @@ frame_progress = 0.8062
 [node name="Yeux" type="AnimatedSprite2D" parent="Skeleton2D/Hanches/Ventre/Cou/Tête"]
 position = Vector2(-7, -73)
 sprite_frames = SubResource("SpriteFrames_mc88t")
-frame_progress = 0.905947
+frame = 4
+frame_progress = 1.0
 
 [node name="SidousHair" type="Sprite2D" parent="Skeleton2D/Hanches/Ventre/Cou/Tête"]
 visible = false
@@ -295,7 +296,7 @@ position = Vector2(-10, -101)
 texture = ExtResource("11_cxumk")
 
 [node name="TimerYeux" type="Timer" parent="Skeleton2D/Hanches/Ventre/Cou/Tête"]
-wait_time = 4.56476
+wait_time = 3.53996
 
 [node name="IKTargets" type="Node2D" parent="."]
 
