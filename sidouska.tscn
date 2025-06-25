@@ -296,7 +296,7 @@ position = Vector2(-10, -101)
 texture = ExtResource("11_cxumk")
 
 [node name="TimerYeux" type="Timer" parent="Skeleton2D/Hanches/Ventre/Cou/Tête"]
-wait_time = 3.53996
+wait_time = 5.41551
 
 [node name="IKTargets" type="Node2D" parent="."]
 

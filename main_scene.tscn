@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://dngd8c6tfkdme"]
+[gd_scene load_steps=19 format=3 uid="uid://dngd8c6tfkdme"]
 
 [ext_resource type="PackedScene" uid="uid://x2uo82d3b28c" path="res://sidouska.tscn" id="1_0f027"]
 [ext_resource type="Script" uid="uid://d0mwugbicqe3p" path="res://main_scene.gd" id="1_gyfs4"]
 [ext_resource type="PackedScene" uid="uid://cnowndpy001lq" path="res://roue.tscn" id="2_2c62f"]
 [ext_resource type="Resource" uid="uid://b0xvsss84ybvm" path="res://save_data.tres" id="2_d5x1h"]
 [ext_resource type="Texture2D" uid="uid://dj0oawrxh5837" path="res://triangle.png" id="4_8mm7a"]
+[ext_resource type="Script" uid="uid://c17v3fixlx2nw" path="res://roue.gd" id="4_hq1ik"]
 
 [sub_resource type="Animation" id="Animation_gyfs4"]
 length = 0.001
@@ -1013,7 +1014,11 @@ color = Color(0, 1, 0, 1)
 [node name="Roue" parent="." node_paths=PackedStringArray("winning_point") instance=ExtResource("2_2c62f")]
 position = Vector2(695, -178)
 scale = Vector2(2.31, 2.31)
+script = ExtResource("4_hq1ik")
+save_data = ExtResource("2_d5x1h")
 winning_point = NodePath("../Triangle/WinningPoint")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="Roue"]
 
 [node name="Triangle" type="Sprite2D" parent="."]
 position = Vector2(1376, -178)

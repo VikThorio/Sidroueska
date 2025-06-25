@@ -15,6 +15,13 @@ var text: String = "":
         text = val
         $Label.text = text
 
+var max_size: float = 1800.0:
+    get:
+        return max_size
+    set(val):
+        max_size = val
+        $Label.size.x = max_size
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     pass # Replace with function body.
@@ -32,3 +39,12 @@ func set_case(numero: int, count: int):
     var angle_delta: float = PI * 2.0 / float(count)
     var angle: float = angle_delta / 2.0 + angle_delta * float(numero)
     rotation = angle
+
+func align_center():
+    $Label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+
+func align_left():
+    $Label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+
+func get_label_size():
+    return $Label.size

@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://cnowndpy001lq"]
+[gd_scene load_steps=9 format=4 uid="uid://cnowndpy001lq"]
 
-[ext_resource type="Script" uid="uid://c17v3fixlx2nw" path="res://roue.gd" id="1_34hw4"]
 [ext_resource type="Texture2D" uid="uid://sfs88342vy0a" path="res://roue.png" id="1_hg3px"]
+[ext_resource type="Script" uid="uid://c06iu2esn6lsn" path="res://roue_steam.gd" id="1_j0j34"]
 [ext_resource type="Shader" uid="uid://cg5p8f122ihvd" path="res://roue.gdshader" id="1_jfl51"]
-[ext_resource type="Resource" uid="uid://b0xvsss84ybvm" path="res://save_data.tres" id="2_filp8"]
 [ext_resource type="Texture2D" uid="uid://ddl15k8tn3pml" path="res://pin.png" id="2_jfl51"]
 [ext_resource type="PackedScene" uid="uid://cqha4ewy1pm1" path="res://boutons_complexes.tscn" id="7_ki3dx"]
 
@@ -22,10 +21,10 @@ shader_parameter/values = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 radius = 1500.0
 
 [node name="Roue" type="Node2D"]
-script = ExtResource("1_34hw4")
-save_data = ExtResource("2_filp8")
+script = ExtResource("1_j0j34")
 
 [node name="Parameters" type="Node2D" parent="."]
+visible = false
 position = Vector2(-96, 45)
 scale = Vector2(0.763675, 0.763675)
 
@@ -33,14 +32,14 @@ scale = Vector2(0.763675, 0.763675)
 offset_left = 564.0
 offset_top = -386.0
 offset_right = 817.0
-offset_bottom = 172.0
+offset_bottom = 213.0
 color = Color(0.17, 0.17, 0.17, 1)
 
 [node name="ColorRect" type="ColorRect" parent="Parameters/ColorRect"]
 layout_mode = 0
-offset_top = 594.286
+offset_top = 636.189
 offset_right = 252.0
-offset_bottom = 689.286
+offset_bottom = 731.189
 color = Color(0.17, 0.17, 0.17, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="Parameters"]
@@ -169,11 +168,29 @@ min_value = -500.0
 max_value = 1500.0
 step = 0.0
 
+[node name="Label8" type="Label" parent="Parameters"]
+offset_left = 585.0
+offset_top = 160.304
+offset_right = 799.0
+offset_bottom = 183.304
+theme_override_font_sizes/font_size = 21
+text = "Taille max. du texte"
+
+[node name="TailleMaxSlider" type="HSlider" parent="Parameters"]
+offset_left = 584.0
+offset_top = 185.852
+offset_right = 799.0
+offset_bottom = 201.852
+focus_mode = 0
+max_value = 5000.0
+step = 0.0
+value = 1800.0
+
 [node name="Sauvegarder" type="Button" parent="Parameters"]
 offset_left = 588.0
-offset_top = 228.049
+offset_top = 269.952
 offset_right = 794.0
-offset_bottom = 284.049
+offset_bottom = 325.952
 focus_mode = 0
 theme_override_font_sizes/font_size = 30
 text = "Enregistrer"
@@ -274,9 +291,13 @@ access = 2
 filters = PackedStringArray("*.png")
 use_native_dialog = true
 
+[node name="ChangePoint" type="Node2D" parent="."]
+position = Vector2(-272, 0)
+
 [connection signal="value_changed" from="Parameters/SpinBox" to="." method="_on_spin_box_value_changed"]
 [connection signal="value_changed" from="Parameters/SizeSlider" to="." method="_on_size_slider_value_changed"]
 [connection signal="value_changed" from="Parameters/ShiftSlider" to="." method="_on_shift_slider_value_changed"]
+[connection signal="value_changed" from="Parameters/TailleMaxSlider" to="." method="_on_taille_max_slider_value_changed"]
 [connection signal="pressed" from="Parameters/Sauvegarder" to="." method="_on_sauvegarder_pressed"]
 [connection signal="pressed" from="Parameters/Skin" to="." method="_on_skin_pressed"]
 [connection signal="pressed" from="Parameters/RefreshSkin" to="." method="_on_refresh_skin_pressed"]

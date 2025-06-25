@@ -50,6 +50,5 @@ func get_case_win():
     print(($Roue.get_roue_rotation()) / (2.0 * PI) * float(save_data.nb_quartiers))
     return case_idx
 
-
 func _on_roue_stopped_spinning() -> void:
     print(save_data.labels[get_case_win()])

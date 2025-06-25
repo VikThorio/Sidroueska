@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="sidroueska"
-run/main_scene="uid://dngd8c6tfkdme"
+run/main_scene="uid://du03wjwsej786"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://bve8ghhmx31yj"
 config/windows_native_icon="res://sidou.ico"
@@ -45,5 +45,10 @@ hide_background={
 faire_coucou={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":true,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":67,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+change_roue={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":true,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }

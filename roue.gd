@@ -107,6 +107,7 @@ func clear_and_generate_labels():
         new_label.set_case(i, save_data.nb_quartiers)
         new_label.color = save_data.label_colors[i]
         new_label.text = save_data.labels[i]
+        new_label.max_size = save_data.labels_max_size
         $Roue/Labels.add_child(new_label)
     
     $Roue.material.set_shader_parameter("n_quartiers", save_data.nb_quartiers);
@@ -190,3 +191,8 @@ func get_acceleration():
     var dist: float = absf(case_idx_f - roundf(case_idx_f)) / 0.5
     dist = maxf(dist - 0.3, 0.0) / 0.7
     return sqrt(dist) * acceleration
+
+
+func _on_taille_max_slider_value_changed(value: float) -> void:
+    save_data.labels_max_size = value
+    clear_and_generate_labels()
